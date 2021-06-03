@@ -1,0 +1,12 @@
+---
+  - name: Ansible Playbook to build & push image
+    hosts: localhost
+    tasks:
+      - name: Build an image
+        community.docker.docker_image:
+          build:
+            path: ./
+          name: docker.io/baba230896/nodejs-test
+          tag: latest
+          push: true
+          source: build
